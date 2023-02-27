@@ -93,6 +93,9 @@ button[disabled] {
   background: #c0c7cf;
 }
 
+button:hover {
+  background-color: hsl(0, 100%, 49%);
+}
 .float-right {
   float: right;
 }
