@@ -16,6 +16,12 @@ var copyPass = document.querySelector("#copy");
 // Write password to the #password input
 function writePassword() {
   // Collect user input on password length, including uppercase or special characters.
+
+  // Creating arrays of characters.
+  const letters = "abcdefghijklmnopqrstuvwxyz";
+  const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const numbers = "0123456789";
+  const symbols = "!@#$%^&*_-+=";
  
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -32,6 +38,7 @@ passLength.addEventListener("change", (event) => {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
 
 
 
