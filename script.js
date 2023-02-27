@@ -46,6 +46,14 @@ generateBtn.addEventListener("click",  () => {
   passwordText.value = writePassword(length.value, characters);
 });
 
+// Add event listener to copy to clipboard button:
+
+copyPass.addEventListener("click", () => {
+  passwordText.select();
+  Document.execCommand("copy");
+  alert("Password Copied");
+})
+
 
 
 
