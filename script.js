@@ -12,21 +12,37 @@ var includeSymbols = document.querySelector("#symbols");
 
 var copyPass = document.querySelector("#copy");
 
+
+
+
+// Write the function to generate password and collect user input on password length, including uppercase or special characters.
+function writePassword(length, characters) {
   // Creating arrays of characters.
-  const characters = "abcdefghijklmnopqrstuvwxyz";
-  const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  const numbers = "0123456789";
-  const symbols = "!@#$%^&*_-+=";
+  var characters = "abcdefghijklmnopqrstuvwxyz";
+  var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var numbers = "0123456789";
+  var symbols = "!@#$%^&*_-+=";
 
+  if(includeUppercase.checked == true) {
+    characters += uppercase;
+  }
 
-// Write password to the #password input
-function writePassword() {
-  // Collect user input on password length, including uppercase or special characters.
+  if(includeNumbers.checked == true) {
+    characters += numbers;
+  }
+
+  if(includeSymbols.checked == true) {
+    characters += symbols;
+  }
+
+  var randomNumber = Math.floor(Math.random() * characters.length);
+  var randomCharacter = characters[randomNumber];
+  console.log(randomCharacter);
 
 
  
   var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  
 
   passwordText.value = password;
 
