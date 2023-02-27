@@ -11,9 +11,6 @@ console.log("say something")
 var passwordText = document.querySelector("#password");
 var generateBtn = document.querySelector("#generate");
 var copyPass = document.querySelector("#copy");
-// Assigning variables to user input from the prompts.
-
-
 
 
 // Write the function to generate password and collect user input on password length, including uppercase or special characters.
@@ -24,8 +21,13 @@ function writePassword() {
   // Prompt for the length of the password between 8 and 128 characters.
   var passLength = parseInt(prompt("How long you would like your password to be? Choose a number between 8 and 128."));
    isNaN(passLength);
+  // Restart the prompts if the input is out of proposed range and of a different type.
   if (passLength < 8 || passLength > 128) {
     alert("Looks like you chose a number outside of 8 to 128 range. Try again!");
+    writePassword();
+  }
+  if (typeof passLength != "number") {
+    alert("The password length has to be a number! Try again!.");
     writePassword();
   }
 
@@ -39,7 +41,7 @@ function writePassword() {
   var incNumbers = parseInt(confirm("Would you like your password to contain numbers?"));
 
   var incSymbols = parseInt(confirm("Would you like your password to contain special characters?"));
-
+ console.log(i)
   // Then my input is validated and  at least one character type should be selected.
   if (
     incLowercase == false 
@@ -53,11 +55,10 @@ function writePassword() {
       writePassword();
   }
 
-
-  
   
   var characters = "";
-
+  incLowercase == true;
+  incSymbols == true;
   // Used conditions to include uppercase, numbers or symbols in line with the earlier selections.
   if(incLowercase == true) {
     characters += lowercase;
@@ -75,15 +76,15 @@ function writePassword() {
     characters += symbols;
   }
 
-  // Generating a random number and a random character based on that number.
-  var randomNumber = Math.floor(Math.random() * characters.length);
-  var randomCharacter = characters[randomNumber];
-  console.log(randomCharacter);
+ 
 
   var password = "";
 
-  for (i = 0; i < lengthValue; i++) {
-    password += randomCharacter;
+  for (let i = 0; i < passLength; i++) {
+     // Generating a random number and a random character based on that number.
+    var randomNumber = Math.floor(Math.random() * characters.length + 1);
+   
+    password += characters.charAt[randomNumber];
   }
 
   passwordText.value = password;
@@ -105,14 +106,6 @@ generateBtn.addEventListener("click", writePassword);
 
 copyPass.addEventListener("click", () => {
   passwordText.select();
-  Document.execCommand("copy");
+  document.execCommand("copy");
   alert("Password Copied");
-})
-
-
-
-
-
-
-
-
+ });
