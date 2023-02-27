@@ -29,8 +29,7 @@ function writePassword() {
     writePassword();
   }
 
-  if (passLength)
-  console.log(passLength);
+
 
   // Ask whether include LOWERCASE, UPPERCASE, NUMERIC, and/or SPECIAL CHARACTERS.
   var incLowercase = parseInt(confirm("Would you like your password to contain lowercase letters?"));
@@ -75,7 +74,7 @@ function writePassword() {
   if(incSymbols == true) {
     characters += symbols;
   }
-  
+
   // Generating a random number and a random character based on that number.
   var randomNumber = Math.floor(Math.random() * characters.length);
   var randomCharacter = characters[randomNumber];
