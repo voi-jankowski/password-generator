@@ -4,23 +4,14 @@ console.log("say something")
 var passwordText = document.querySelector("#password");
 var generateBtn = document.querySelector("#generate");
 // Assigning variables to user input from the settings.
-var passLength = document.querySelector("#length");
-var passLengthResult = document.querySelector("#length-result");
-var includeUppercase =document.querySelector("#uppercase");
-var includeNumbers = document.querySelector("#numbers");
-var includeSymbols = document.querySelector("#symbols");
+var passLength = 
+var passLengthResult = 
+var includeUppercase =
+var includeNumbers = 
+var includeSymbols = 
 
 var copyPass = document.querySelector("#copy");
 
-
-// Add event listener to password range change.
-passLength.addEventListener("change", (event) => {
-  passLengthResult.innerText = event.target.value;
-});
-
-var lengthValue = passLengthResult.innerText;
-
-console.log(lengthValue);
 
 
 // Write the function to generate password and collect user input on password length, including uppercase or special characters.
@@ -59,7 +50,6 @@ function writePassword(length, characters) {
  
   // var password = generatePassword();
   
-  console.log(password);
 
   return password;
 
