@@ -3,7 +3,7 @@ console.log("say something")
 // Assignment Code
 var passwordText = document.querySelector("#password");
 var generateBtn = document.querySelector("#generate");
-// Assigning variables to user input from the settings.
+// Assigning variables to user input from the prompts.
 var passLength = 
 var passLengthResult = 
 var includeUppercase =
@@ -16,6 +16,14 @@ var copyPass = document.querySelector("#copy");
 
 // Write the function to generate password and collect user input on password length, including uppercase or special characters.
 function writePassword(length, characters) {
+
+  // Present prompts with different criteria for password.
+
+  // Prompt for the length of the password between 8 and 128 characters.
+
+  // Ask whether include LOWERCASE, UPPERCASE, NUMERIC, and/or SPECIAL CHARACTERS.
+
+  // Then my input is validated and  at least one character type should be selected.
 
   // Creating arrays of characters.
   var characters = "abcdefghijklmnopqrstuvwxyz";
