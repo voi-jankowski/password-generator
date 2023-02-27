@@ -66,7 +66,7 @@ function writePassword(length, characters) {
 
 }
 
-
+// Press the button to Generate password.
 
 // Add event listener to generate button 
 generateBtn.addEventListener("click", writePassword);
