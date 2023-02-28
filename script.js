@@ -64,21 +64,25 @@ function writePassword() {
   var characters = "";
   var password = "";
   
-  // Used conditions to include uppercase, numbers or symbols in line with the earlier selections.
+  // Used conditions to include uppercase, numbers or symbols in line with the earlier selections and making sure they are use at least once if seleced.
   if(incLowercase == true) {
     characters += lowercase;
+    password += lowercase[Math.floor(Math.random() * lowercase.length)];
   }
   
   if(incUppercase == true) {
     characters += uppercase;
+    password += uppercase[Math.floor(Math.random() * uppercase.length)];
   }
 
   if(incNumbers == true) {
     characters += numbers;
+    password += numbers[Math.floor(Math.random() * numbers.length)];
   }
 
   if(incSymbols == true) {
     characters += symbols;
+    password += symbols[Math.floor(Math.random() * symbols.length)];
   }
 
 
