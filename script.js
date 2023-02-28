@@ -21,7 +21,7 @@ function writePassword() {
  
   // Prompt for the length of the password between 8 and 128 characters.
   var passLength = parseInt(prompt("How long you would like your password to be? Choose a number between 8 and 128."));
-  
+
   // Restart the prompts if the input is of a different type.
   if (isNaN(passLength)) {
     alert("The password length has to be a number! Try again!.");
@@ -62,6 +62,7 @@ function writePassword() {
 
   
   var characters = "";
+  var password = "";
   
   // Used conditions to include uppercase, numbers or symbols in line with the earlier selections.
   if(incLowercase == true) {
@@ -82,15 +83,14 @@ function writePassword() {
 
 
 
-  var password = "";
+  
 
   for (let i = 0; i < passLength; i++) {
      // Generating a random number and a random character based on that number.
-    var randomNumber = Math.floor(Math.random() * characters.length);
    
-    password += characters[randomNumber];
+    password += characters[Math.floor(Math.random() * characters.length)];
   }
-
+  // 
   passwordText.value = password;
  
   // var password = generatePassword();
