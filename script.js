@@ -13,6 +13,7 @@ var generateBtn = document.querySelector("#generate");
 var copyPass = document.querySelector("#copy");
 
 
+
 // Write the function to generate password and collect user input on password length, including uppercase or special characters.
 function writePassword() {
 
@@ -20,28 +21,32 @@ function writePassword() {
  
   // Prompt for the length of the password between 8 and 128 characters.
   var passLength = parseInt(prompt("How long you would like your password to be? Choose a number between 8 and 128."));
-   isNaN(passLength);
-  // Restart the prompts if the input is out of proposed range and of a different type.
-  if (passLength < 8 || passLength > 128) {
-    alert("Looks like you chose a number outside of 8 to 128 range. Try again!");
-    writePassword();
-  }
-  if (typeof passLength != "number") {
+  
+  // Restart the prompts if the input is of a different type.
+  if (isNaN(passLength)) {
     alert("The password length has to be a number! Try again!.");
     writePassword();
   }
 
+   isNaN(passLength);
+  // Restart the prompts if the input is out of proposed range.
+  if (passLength < 8 || passLength > 128) {
+    alert("Looks like you chose a number outside of 8 to 128 range. Try again!");
+    writePassword();
+  }
+ 
 
 
   // Ask whether include LOWERCASE, UPPERCASE, NUMERIC, and/or SPECIAL CHARACTERS.
-  var incLowercase = parseInt(confirm("Would you like your password to contain lowercase letters?"));
+  var incLowercase = confirm("Would you like your password to contain lowercase letters?");
 
-  var incUppercase = parseInt(confirm("Would you like your password to contain uppercase letters?"));
+  var incUppercase = confirm("Would you like your password to contain uppercase letters?");
 
-  var incNumbers = parseInt(confirm("Would you like your password to contain numbers?"));
+  var incNumbers = confirm("Would you like your password to contain numbers?");
 
-  var incSymbols = parseInt(confirm("Would you like your password to contain special characters?"));
- console.log(i)
+  var incSymbols = confirm("Would you like your password to contain special characters?");
+ 
+
   // Then my input is validated and  at least one character type should be selected.
   if (
     incLowercase == false 
@@ -57,8 +62,7 @@ function writePassword() {
 
   
   var characters = "";
-  incLowercase == true;
-  incSymbols == true;
+  
   // Used conditions to include uppercase, numbers or symbols in line with the earlier selections.
   if(incLowercase == true) {
     characters += lowercase;
@@ -76,15 +80,15 @@ function writePassword() {
     characters += symbols;
   }
 
- 
+
 
   var password = "";
 
   for (let i = 0; i < passLength; i++) {
      // Generating a random number and a random character based on that number.
-    var randomNumber = Math.floor(Math.random() * characters.length + 1);
+    var randomNumber = Math.floor(Math.random() * characters.length);
    
-    password += characters.charAt[randomNumber];
+    password += characters[randomNumber];
   }
 
   passwordText.value = password;
